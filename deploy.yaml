@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: consumeapi
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: consumeapi
+ template:
+   metadata:
+     labels:
+       app: consumeapi
+   spec:
+     containers:
+     - name: consumeapi
+       image: den86/consumeapi
